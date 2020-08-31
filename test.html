@@ -5,14 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>测试</title>
     <script src="./js/md5.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
 </head>
 <body>
-    <script>
+    <!-- <script>
         let pwd = "123456";
         let newPwd = md5(pwd);
         let newPwd2 = md5("e10adc3949ba59abbe56e057f20f883e")
         console.log(newPwd);
         console.log(newPwd2);
+    </script> -->
+   
+    <button id="btn">点击</button>
+    <script>
+        let btn = document.getElementsByTagName("button")[0];
+        //给btn订阅了一件事//当点击时，代表发布
+        // btn.onclick = function(){
+        //     console.log("点击了...");
+        // }
+
+        //DOM2的事件绑定是基于事件池的  发布订阅
+        // btn.addEventListener("click",()=>{
+        //     console.log("111");
+        // })
+        // btn.addEventListener("click",()=>{
+        //     console.log("222");
+        // })
+
+        let f1 = function(name){
+            console.log("第1件事,姓名:"+name);
+        }
+        let f2 = function(_,age){
+            console.log("第2件事,年龄:"+age);
+        }
+        let $plan = $.Callbacks();
+        //订阅这两件事
+        $plan.add(f1);
+        $plan.add(f2);
+        //发布
+        $("#btn").click(function(){
+            $plan.fire("wangcai",100);//发布
+        })
+
+
+
+        
+
+  
     </script>
     
 </body>

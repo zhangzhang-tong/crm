@@ -39,5 +39,5 @@ $(function () {
             return;
         }
         alert("用户名和密码出错了")
-    })
+    });
 })
