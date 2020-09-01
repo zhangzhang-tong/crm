@@ -16,7 +16,7 @@
         console.log(newPwd2);
     </script> -->
    
-    <button id="btn">点击</button>
+    <!-- <button id="btn">点击</button>
     <script>
         let btn = document.getElementsByTagName("button")[0];
         //给btn订阅了一件事//当点击时，代表发布
@@ -46,13 +46,19 @@
         $("#btn").click(function(){
             $plan.fire("wangcai",100);//发布
         })
-
-
-
-        
-
-  
-    </script>
+    </script> -->
     
+    <script>
+        let arr = ["一","二","三","四","五"]
+        let res = arr.filter((item,index)=>{
+            //item代表数组中的每一个元素
+            //index代表每个元素的索引
+            //console.log("item:"+item+",index:"+index);
+
+            //把满足条件的元素放到一个新数组中，并返回
+            return index > 3;
+        })
+        console.log(res); //五
+    </script>
 </body>
 </html>
